@@ -1,0 +1,7 @@
+namespace system;
+
+public type Iterable[T]
+{
+    public abstract iterate(self) => Iterator[T];
+    public abstract iterate(mut self) => Iterator[ref T];
+}

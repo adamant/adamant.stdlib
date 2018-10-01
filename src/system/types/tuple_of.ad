@@ -1,0 +1,7 @@
+namespace system.types;
+
+// Given a list of types return the tuple type with that as it's type parameter
+public fn tuple_of(types: List[type]) -> type
+{
+    return Tuple[params types];
+}

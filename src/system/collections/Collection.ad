@@ -1,0 +1,7 @@
+namespace system.collections.
+
+/// A collection is a collection of items
+public abstract mut class Collection[T]: Container[T] <: Iterable[T]
+{
+
+}

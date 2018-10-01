@@ -1,0 +1,9 @@
+namespace system.memory;
+
+/// The idea of this type is that it might be possible to move the functionality
+/// of class value types into the standard library
+public struct Value[T]
+    where T: class
+{
+    private let value: Bytes[sizeof[T]];
+}

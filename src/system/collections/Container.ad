@@ -1,0 +1,8 @@
+namespace system.collections;
+
+// A container holds items but provides limited access to them
+public abstract mut class Container[T]
+{
+    /// O(1)
+    public abstract get count(self) -> size;
+}

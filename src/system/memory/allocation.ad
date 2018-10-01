@@ -1,0 +1,23 @@
+namespace system.memory;
+
+external "runtime"
+{
+    // TODO Rust has both size and alignment for allocation
+
+    /// Allocate `count` bytes of memory, panics
+    public safe allocate(count: size) -> @byte;
+    public safe try_allocate(count: size) -> @byte?;
+    public safe allocate[T](count: size = 1) -> @T
+        where T: struct;
+    public safe try_allocate[T](count: size = 1) -> @T?
+        where T: struct;
+    public unsafe free(memory: @byte) -> void;
+    public unsafe free[T](memory: @T) -> void
+        where T: struct;
+}
+
+
+
+
+
+

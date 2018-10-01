@@ -1,0 +1,51 @@
+namespace system.collections.specialized;
+
+/// An `Unsafe_Array[T]` is an array of `T`'s that start uninitlized.
+public mut struct Unsafe_Array[T]
+{
+    public const empty: Unsafe_Array[T] = new Unsafe_Array[T](0);
+
+    public let count: size;
+    private let elements: Raw_Array[T];
+
+    public new(.count)
+    {
+        self.elements = new Raw_Array[T](self.count);
+    }
+
+    private init(.count, .elements) { }
+
+    /// Unsafe because the element may not be initlized
+    public unsafe at(mut self, index: size) -> ref var T
+        requires index < count
+    {
+        return unsafe elements.at(index);
+    }
+
+    public unsafe at(self, index: size) -> ref T
+        requires index < count
+    {
+        return unsafe elements.at(index);
+    }
+
+    public slice(mut self, start: size, length: size) -> mut Unsafe_Array[T] $< t
+        requires start < count
+        requires start + length <= count
+    {
+        return init Unsafe_Array[T](count, elements.slice(start));
+    }
+
+    public slice(self, start: size, end: size) -> Unsafe_Array[T] $< t
+        requires start < count
+        requires start + length <= count
+    {
+        return init Unsafe_Array[T](count, elements.slice(start));
+    }
+
+    // TODO this is strange, do they explicitly call delete?
+    public unsafe delete()
+    {
+        // implicit delete handles self.elements. destructor needed for unsafe
+        // Or should it be explicit because of unsafe?
+    }
+}

@@ -1,0 +1,10 @@
+namespace system.patterns;
+
+// This type could then be used as Vistior[Foo, #[Arg, Arg], void, #[]]
+public class Visitor[T, TArgs: List[type], TReturn, TThrows: List[type]]
+{
+    public fn Visit(host: T, params args: TArgs) -> TReturn
+        throws params TThrows...
+    {
+    }
+}

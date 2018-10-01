@@ -1,0 +1,18 @@
+namespace system.comparison;
+
+public enum struct Ordering
+{
+    Less,
+    Equal,
+    Greater,
+
+    public reverse(self) -> Ordering
+    {
+        return match self
+        {
+            .Less => .Greater,
+            .Equal => .Equal,
+            .Greater => .Less
+        };
+    }
+}

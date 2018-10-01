@@ -1,0 +1,26 @@
+// It was thought for a while that Tuple[T...] could be a type in the standard
+// library. However, due to issues with how to declare it with `params` it seems
+// it must be a primitive type. Declaring a set of related tuple types isn't
+// viable because it is important tuples not have a size limit so they can be
+// used in generics without limit. This file is being kept around in case
+// this changes and there is a way to declaring tuples within the language.
+
+// namespace system;
+
+// /// This is the core Tuple type that is typically constructed from the tuple
+// /// value constructor `#(...)`
+// public class Tuple[params types: List[type]]
+// {
+//     // Fields/vars named with `X...` are auto named with numbers, so `\""...`
+//     // gives names of numbers only.
+//     public var \""...: types...;
+
+//     // I want to define this in terms of itself, but that is circular with
+//     // no base case.
+//     public implicit new #() (params values: tuple_of(types))
+//     {
+//         self.\""... = values...; // very akward code
+//     }
+
+//     public operator params()
+// }

@@ -1,0 +1,6 @@
+{
+    "name": "adamant.stdlib",
+    "root_namespace": "",
+    "authors": ["Jeff Walker Code Ranger"],
+    "template": "lib"
+}

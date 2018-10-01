@@ -1,0 +1,7 @@
+namespace system.memory;
+
+private mut struct Bytes[n: size]
+    where n > 0
+{
+    private var data: tuple_of(repeat(byte, n));
+}
