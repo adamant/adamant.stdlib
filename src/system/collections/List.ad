@@ -9,8 +9,8 @@ public mut struct List[T]
     private var public get count: size;
     private var buckets: Unsafe_Array[T];
     @Inline(.Always)
-    public get capacity(self) { return value.count; }
-    public set capacity(mut self, value: size)
+    public get capacity(self) -> size { return value.count; }
+    public set capacity(mut self, value: size) -> void
         requires value >= count
     {
         if value =/= capacity
