@@ -1,14 +1,12 @@
 namespace system.memory;
 
-/// For purposes of determining the size of a reference to `T` since `sizeof[T]`
-/// gives the size of an object of type `T`. Instead use `sizeof[Ref[T]]` to get
-/// the size of a reference to `T`
+/// To determine the size of a reference to `T` use `sizeof[Ref[T]`.
+///
+/// This is needed becuase `sizeof[T]` gives the size of an object of type `T`.
 public struct Ref[T]
     where T: class
 {
     private let value: T = uninitialized;
 
-    private init()
-    {
-    }
+    private init() { }
 }

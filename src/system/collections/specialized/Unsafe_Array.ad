@@ -1,12 +1,13 @@
 namespace system.collections.specialized;
 
 /// An `Unsafe_Array[T]` is an array of `T`'s that start uninitlized.
-public mut struct Unsafe_Array[T]
+public mut ref struct Unsafe_Array[T]
 {
-    public const empty: Unsafe_Array[T] = new Unsafe_Array[T](0);
+    // TODO is this typed correctly? Will it compile?
+    public const empty: Unsafe_Array[never] = new Unsafe_Array[never](0);
 
     public let count: size;
-    private let elements: Raw_Array[T];
+    private let elements: Raw_Array[T]$ref;
 
     public new(.count)
     {
@@ -19,27 +20,27 @@ public mut struct Unsafe_Array[T]
     public unsafe at(mut self, index: size) -> ref var T
         requires index < count
     {
-        return unsafe elements.at(index);
+        return unsafe(elements.at(index));
     }
 
     public unsafe at(self, index: size) -> ref T
         requires index < count
     {
-        return unsafe elements.at(index);
+        return unsafe(elements.at(index));
     }
 
-    public slice(mut self, start: size, length: size) -> mut Unsafe_Array[T] $< t
+    public slice(mut self, start: size, length: size) -> mut Unsafe_Array[T] $< ref
         requires start < count
         requires start + length <= count
     {
-        return init Unsafe_Array[T](count, elements.slice(start));
+        return init Unsafe_Array[T](length, elements.slice(start));
     }
 
-    public slice(self, start: size, end: size) -> Unsafe_Array[T] $< t
+    public slice(self, start: size, length: size) -> Unsafe_Array[T] $< ref
         requires start < count
         requires start + length <= count
     {
-        return init Unsafe_Array[T](count, elements.slice(start));
+        return init Unsafe_Array[T](length, elements.slice(start));
     }
 
     // TODO this is strange, do they explicitly call delete?

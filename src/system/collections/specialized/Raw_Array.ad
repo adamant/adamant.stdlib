@@ -7,7 +7,7 @@ namespace system.collections.specialized;
 
 /// A `Raw_Array[T]` is a fairly thin wrapper around a pointer to a block of
 /// memory. It doesn't carry a size.
-public mut struct Raw_Array[T]$self
+public mut ref struct Raw_Array[T]
 {
     // This is needed to allow pointers to references
     private struct Element[T]
@@ -38,12 +38,12 @@ public mut struct Raw_Array[T]$self
         return unsafe(ref (elements+index)^.value);
     }
 
-    public fn slice(mut self, index: size) -> mut Raw_Array[T] $< t
+    public fn slice(mut self, index: size) -> mut Raw_Array[T] $< ref
     {
         return init Raw_Array[T](elements+index);
     }
 
-    public fn slice(self, index: size) -> Raw_Array[T] $< t
+    public fn slice(self, index: size) -> Raw_Array[T] $< ref
     {
         return init Raw_Array[T](elements+index);
     }

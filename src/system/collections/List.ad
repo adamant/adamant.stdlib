@@ -2,14 +2,14 @@ namespace system.collections;
 
 using system.comparision;
 
-public mut struct List[T]
+public mut class List[T]
 {
     private const DEFAULT_CAPACITY = 4;
 
     private var public get count: size;
     private var buckets: Unsafe_Array[T];
     @Inline(.Always)
-    public get capacity(self) -> size { return value.count; }
+    public get capacity(self) -> size { return buckets.count; }
     public set capacity(mut self, value: size) -> void
         requires value >= count
     {
@@ -19,7 +19,7 @@ public mut struct List[T]
             {
                 NOT_IMPLEMENTED();
             }
-            else
+            else // Since value == 0 >= count, there are no items to delete
                 { buckets = Unsafe_Array[T].empty; }
         }
     }
@@ -31,22 +31,23 @@ public mut struct List[T]
     }
 
     private ensure_capacity(min: size) -> void
+        ensures capacity >= min
     {
         if capacity < min
         {
             var new_capacity = max(DEFAULT_CAPACITY, capacity);
             while new_capacity < min
                 { new_capacity *= 2; }
-            capacity = new_capacity; // resizes buckets
+            capacity = new_capacity; // TODO resizes buckets
         }
     }
 
-    public add(mut self, value: T) -> void
+    public safe add(mut self, value: T) -> void
         ensures count == old(count) + 1
         ensures capacity >= count
     {
         ensure_capacity(count+1);
-        values.at(count) = value;
+        unsafe(buckets.at(count) = value);
         count += 1;
     }
 

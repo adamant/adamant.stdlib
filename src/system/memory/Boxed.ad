@@ -36,7 +36,7 @@ public mut struct Boxed[T]
 
     public safe delete()
     {
-        unsafe value^.delete();
+        unsafe(value^.delete());
         free(value);
     }
 }

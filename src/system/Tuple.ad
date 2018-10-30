@@ -9,7 +9,7 @@
 
 // /// This is the core Tuple type that is typically constructed from the tuple
 // /// value constructor `#(...)`
-// public class Tuple[params types: List[type]]
+// public class Tuple[params types: Array[type]]
 // {
 //     // Fields/vars named with `X...` are auto named with numbers, so `\""...`
 //     // gives names of numbers only.
