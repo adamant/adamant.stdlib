@@ -8,7 +8,8 @@ public mut class List[T]
 
     private var public get count: size;
     private var buckets: Unsafe_Array[T];
-    @Inline(.Always)
+
+    #Inline(.Always)
     public get capacity(self) -> size { return buckets.count; }
     public set capacity(mut self, value: size) -> void
         requires value >= count
