@@ -4,5 +4,5 @@ namespace system.comparison;
 public type PartiallyOrdered <: Equatable, PartiallyOrdered
 {
     // This only works if Ordering <: Ordering?
-    public override abstract compare(other: Self) -> Ordering;
+    public override abstract fn compare(other: Self) -> Ordering;
 }

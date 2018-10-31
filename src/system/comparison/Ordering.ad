@@ -6,7 +6,7 @@ public enum struct Ordering
     Equal,
     Greater,
 
-    public reverse(self) -> Ordering
+    public fn reverse(self) -> Ordering
     {
         return match self
         {

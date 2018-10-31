@@ -30,7 +30,7 @@ public mut class List[T]
         .values = Unsafe_Array[T].empty;
     }
 
-    private ensure_capacity(min: size) -> void
+    private fn ensure_capacity(min: size) -> void
         ensures capacity >= min
     {
         if capacity < min
@@ -42,7 +42,7 @@ public mut class List[T]
         }
     }
 
-    public safe add(mut self, value: T) -> void
+    public safe fn add(mut self, value: T) -> void
         ensures count == old(count) + 1
         ensures capacity >= count
     {

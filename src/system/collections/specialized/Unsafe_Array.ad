@@ -17,26 +17,26 @@ public mut ref struct Unsafe_Array[T]
     private init(.count, .elements) { }
 
     /// Unsafe because the element may not be initlized
-    public unsafe at(mut self, index: size) -> ref var T
+    public unsafe fn at(mut self, index: size) -> ref var T
         requires index < count
     {
         return unsafe(elements.at(index));
     }
 
-    public unsafe at(self, index: size) -> ref T
+    public unsafe fn at(self, index: size) -> ref T
         requires index < count
     {
         return unsafe(elements.at(index));
     }
 
-    public slice(mut self, start: size, length: size) -> mut Unsafe_Array[T] $< ref
+    public fn slice(mut self, start: size, length: size) -> mut Unsafe_Array[T] $< ref
         requires start < count
         requires start + length <= count
     {
         return init Unsafe_Array[T](length, elements.slice(start));
     }
 
-    public slice(self, start: size, length: size) -> Unsafe_Array[T] $< ref
+    public fn slice(self, start: size, length: size) -> Unsafe_Array[T] $< ref
         requires start < count
         requires start + length <= count
     {

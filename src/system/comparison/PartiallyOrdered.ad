@@ -7,7 +7,7 @@ namespace system.comparison;
 /// The same must hold for both == and >
 public type PartiallyOrdered <: PartiallyEquatable
 {
-    public abstract compare(other: Self) -> Ordering?;
+    public abstract fn compare(other: Self) -> Ordering?;
 
     public override operator == (other: Self) -> bool?
     {

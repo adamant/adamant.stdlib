@@ -28,18 +28,18 @@ public mut class Stack[T]: Container[T]
     }
 
     #Inline(.Always)
-    public clear(mut self) => void
+    public fn clear(mut self) -> void
     {
         items.clear();
     }
 
-    public peek(self) -> T?
+    public fn peek(self) -> T?
     {
         // TODO handle stack empty
         return items.at(count-1);
     }
 
-    public pop(mut self) -> T?
+    public fn pop(mut self) -> T?
     {
         // TODO handle stack empty
         let item = items[count-1];
@@ -48,7 +48,7 @@ public mut class Stack[T]: Container[T]
     }
 
     #Inline(.Always)
-    public push(mut self, item: T) -> void
+    public fn push(mut self, item: T) -> void
     {
         items.add(item);
     }

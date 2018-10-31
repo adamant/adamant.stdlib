@@ -2,7 +2,7 @@ namespace system.console;
 
 public class Console
 {
-    public write_line(mut self, line: string) -> void
+    public fn write_line(mut self, line: string) -> void
     {
         printf("%.*s\n", value.byte_length.value, value.bytes);
     }
