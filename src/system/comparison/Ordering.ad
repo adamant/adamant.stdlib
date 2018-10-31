@@ -4,7 +4,7 @@ public enum struct Ordering
 {
     Less,
     Equal,
-    Greater,
+    Greater;
 
     public fn reverse(self) -> Ordering
     {
