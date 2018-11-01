@@ -1,5 +1,7 @@
 namespace system.patterns;
 
+using system.collections;
+
 // This type could then be used as Vistior[Foo, #[Arg, Arg], void, #[]]
 public class Visitor[T, TArgs: List[type], TReturn, TThrows: List[type]]
 {
