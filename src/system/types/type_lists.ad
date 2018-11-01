@@ -1,5 +1,7 @@
 namespace system.types;
 
+using system.collections;
+
 public fn repeat(t: type, count: size) -> List[type]
 {
     let types = new List[type]();

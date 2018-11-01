@@ -1,5 +1,7 @@
 namespace system.types;
 
+using system.numerics;
+
 // Since this a pure function, it can be evaluated at compile time
 public fn factorial(n: integer) -> integer
 {
