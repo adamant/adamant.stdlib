@@ -14,7 +14,8 @@ public mut ref struct Unsafe_Array[T]
         self.elements = new Raw_Array[T](self.count);
     }
 
-    private init(.count, .elements) { }
+    // Unsafe because count may not match elements?
+    private unsafe init(.count, .elements) { }
 
     /// Unsafe because the element may not be initlized
     public unsafe fn at(mut self, index: size) -> ref var T

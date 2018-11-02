@@ -1,13 +1,13 @@
 namespace system.comparison;
 
-public fn max[T](a: T, b: T) -> T
-    where T <: Ordered
-{
-    return if a >= b => a else => b;
-}
+// public fn max[T](a: T, b: T) -> T
+//     where T <: Ordered
+// {
+//     return if a >= b => a else => b;
+// }
 
-public fn min[T](a: T, b: T) -> T
-    where T <: Ordered
-{
-    return if a <= b => a else => b;
-}
+// public fn min[T](a: T, b: T) -> T
+//     where T <: Ordered
+// {
+//     return if a <= b => a else => b;
+// }

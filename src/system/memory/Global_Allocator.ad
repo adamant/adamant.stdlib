@@ -1,0 +1,12 @@
+namespace system.memory;
+
+public type Global_Allocator
+{
+    public fn allocate(self, layout: Allocation_Layout) -> @any
+        may throw Allocation_Failure;
+    public fn allocate_zeroed(self, layout: Allocation_Layout) -> @any
+        may throw Allocation_Failure;
+    public unsafe fn deallocate(self, ptr: @any) -> void;
+    public unsafe fn reallocate(self, ptr: @any, new_layout: Allocation_Layout) -> @any
+        may throw Allocation_Failure;
+}
