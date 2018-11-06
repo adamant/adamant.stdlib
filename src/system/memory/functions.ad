@@ -39,7 +39,7 @@ public unsafe fn zeroed[T]() -> T
     where T: struct
 {
     var value: T = uninitialized;
-    zero(@value, sizeof[T]);
+    zero(@value, size_of[T]);
     return value;
 }
 
