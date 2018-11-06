@@ -1,5 +1,7 @@
 namespace system.collections;
 
+// TODO move to system.collections package
+
 /// A key value collection
 // public mut class Dictionary[K, V] <: Collection[Entry[K, V]
 // {

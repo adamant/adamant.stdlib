@@ -9,21 +9,14 @@ namespace system.collections.specialized;
 /// memory. It doesn't carry a size.
 public mut ref struct Raw_Array[T]
 {
-    // This is needed to allow pointers to references
-    private struct Element[T]
-    {
-        public unsafe var value: T = uninitialized;
-    }
-
-    private let elements: @Element[T];
+    private let elements: @T;
 
     public new(count: size)
     {
-        if count > 0
-            { .elements = allocate[Element[T]](count); }
+        .elements = allocate[T](count);
     }
 
-    private init(elements: @Element[T])
+    public unsafe init(elements: @T)
     {
         .elements = elements;
     }
@@ -51,6 +44,6 @@ public mut ref struct Raw_Array[T]
     // TODO this is strange, do they explicitly call delete?
     public unsafe delete()
     {
-        unsafe(free(elements));
+        unsafe(deallocate(elements));
     }
 }

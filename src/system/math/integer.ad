@@ -1,4 +1,4 @@
-namespace system.numerics;
+namespace system.math;
 
 /// Aribitrary sized integer
 public struct integer

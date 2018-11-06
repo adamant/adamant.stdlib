@@ -1,5 +1,7 @@
 namespace system.collections;
 
+// TODO move to system.collections package
+
 // A container holds items but provides limited access to them
 public abstract mut class Container[T]
 {

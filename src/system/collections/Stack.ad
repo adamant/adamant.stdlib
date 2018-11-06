@@ -1,5 +1,7 @@
 namespace system.collections;
 
+// TODO move to system.collections package
+
 public mut class Stack[T]: Container[T]
 {
     private let items: mut List[T];

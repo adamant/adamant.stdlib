@@ -1,9 +1,0 @@
-namespace system.types;
-
-/// Typeof can be written as a regular function. As a consequence, it isn't
-/// really needed. That means you should be able to do let t: type = Foo;
-public fn type_of(t: type) -> type
-{
-    return t;
-}
-

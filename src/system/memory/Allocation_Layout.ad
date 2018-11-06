@@ -13,7 +13,7 @@ namespace system.memory;
 
 // Why not store alignment as the power?
 public struct Allocation_Layout
-    invariant is_power_of_two(minimum_alignment)
+    invariant minimum_alignment.is_power_of_two()
     invariant does_not_overflow_at_alignment(\size, minimum_alignment)
 {
     public let \size: size;
@@ -29,5 +29,3 @@ public struct Allocation_Layout
         return \size <= max_size;
     }
 }
-
-
