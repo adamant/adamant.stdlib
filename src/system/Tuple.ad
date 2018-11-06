@@ -1,5 +1,6 @@
 namespace system;
 
+using system.collections;
 using system.collections.specialized;
 
 public class Tuple[params Types: Array[type]]

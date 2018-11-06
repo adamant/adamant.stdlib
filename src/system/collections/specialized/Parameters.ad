@@ -37,7 +37,7 @@ public move struct Parameters[T, params Rest: Array[type]]
     }
 
     #Inline
-    public fn at[n: size] -> if n==0 => T else => Rest.at(n-1);
+    public fn at[n: size] -> if n==0 => T else => Rest.at(n-1)
         requires n < Rest.count
     {
         if n==0

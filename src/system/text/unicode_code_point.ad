@@ -1,28 +1,28 @@
 namespace system.text;
 
-public struct unicode_code_point
-    invariant value <= MaxCodePointValue
-{
-    private const MaxCodePointValue: uint = 0x10FFFF;
-    public const MinValue: unicode_code_point = unicode_code_point(0);
-    public const MaxValue: unicode_code_point = unicode_code_point(MaxCodePointValue);
+// public struct unicode_code_point
+//     invariant value <= MaxCodePointValue
+// {
+//     private const MaxCodePointValue: uint = 0x10FFFF;
+//     public const MinValue: unicode_code_point = unicode_code_point(0);
+//     public const MaxValue: unicode_code_point = unicode_code_point(MaxCodePointValue);
 
-    private let value: uint32;
+//     private let value: uint32;
 
-    public init(.value)
-        requires value <= MaxCodePointValue
-    { }
+//     public init(.value)
+//         requires value <= MaxCodePointValue
+//     { }
 
-    public unsafe implicit operator ''(count: size, bytes: @byte) -> code_point
-    {
+//     public unsafe implicit operator ''(count: size, bytes: @byte) -> code_point
+//     {
 
-    }
+//     }
 
-    #Inline
-    public operator <=(self, other: unicode_code_point) -> bool
-    {
-        return self.value <= other.value;
-    }
+//     #Inline
+//     public operator <=(self, other: unicode_code_point) -> bool
+//     {
+//         return self.value <= other.value;
+//     }
 
-    // TODO implement rest of operators and functions
-}
+//     // TODO implement rest of operators and functions
+// }
