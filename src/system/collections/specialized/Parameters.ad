@@ -1,7 +1,5 @@
 namespace system.collections.specialized;
 
-using system.collections;
-
 public move struct Parameters[]
 {
     public get count() -> size

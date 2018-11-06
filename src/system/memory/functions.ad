@@ -1,8 +1,16 @@
 namespace system.memory;
 
-// TODO fn copy_memory()
+// TODO unsafe fn copy_memory()
 
-// TODO fn move_memory()
+// TODO unsafe fn forget()
+
+// TODO unsafe fn move_memory()
+
+public safe fn size_of[T] -> size
+{
+    // TODO correctly implement
+    return 0;
+}
 
 public unsafe fn write_bytes(destination: @any, value: byte, byte_count: size) -> void
     // TODO requires destination+byte_count doesn't overflow
