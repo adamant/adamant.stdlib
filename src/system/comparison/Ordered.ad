@@ -3,6 +3,6 @@ namespace system.comparison;
 // A type for which there is a [total order](https://en.wikipedia.org/wiki/Total_order).
 public type Ordered <: Equatable, PartiallyOrdered
 {
-    // This only works if Ordering <: Ordering?
+    // This only works if `Ordering <: Ordering?`
     public override abstract fn compare(other: Self) -> Ordering;
 }
