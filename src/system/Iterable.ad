@@ -1,7 +1,7 @@
-namespace system;
+// namespace system;
 
-public type Iterable[T]
-{
-    public abstract fn iterate(self) -> Iterator[T];
-    public abstract fn iterate(mut self) -> Iterator[ref var T];
-}
+// public type Iterable[T]
+// {
+//     public abstract fn iterate(self) -> Iterator[T];
+//     public abstract fn iterate(mut self) -> Iterator[ref var T];
+// }

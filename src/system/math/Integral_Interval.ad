@@ -1,7 +1,7 @@
-namespace system.math;
+// namespace system.math;
 
-public type Integral_Interval
-{
-    public const max_value: Self;
-    public const min_value: Self;
-}
+// public type Integral_Interval
+// {
+//     public const max_value: Self;
+//     public const min_value: Self;
+// }
