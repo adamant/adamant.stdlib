@@ -1,5 +1,3 @@
-namespace system.memory;
-
 // TODO unsafe fn copy_memory()
 
 // TODO unsafe fn forget()

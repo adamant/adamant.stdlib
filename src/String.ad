@@ -1,3 +1,6 @@
+
+// Note: This is declared in the global namespace so that it will take precedence
+// over any `String` types declared in other packages.
 public ref struct String
 {
     public let bytes: Array[byte]$ref;
