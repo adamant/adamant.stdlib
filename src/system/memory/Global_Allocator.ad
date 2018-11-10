@@ -10,7 +10,7 @@
 /// * the memory block was not subsequently deallocated. Blocks are deallocated
 ///   either by being passed to a deallocation method such as `deallocate` or by
 ///   being passed to a reallocation method that returns a non-null pointer.
-public type Global_Allocator
+public trait Global_Allocator
 {
     // TODO This type shows the need for abstract predicate functions for
     //      contracts. These could not be checked at runtime, but could be used
