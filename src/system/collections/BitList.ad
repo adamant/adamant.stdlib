@@ -17,3 +17,8 @@
 
 // public specialize class List[_] <: List[bool]
 
+
+// public class List[T]
+//     where let T = bool
+// {
+// }
