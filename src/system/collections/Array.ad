@@ -1,32 +1,32 @@
-public mut ref struct Array[n: size, T]
-{
-    private let elements: Raw_Array[T]$ref;
+// public mut ref struct Array[n: size, T]
+// {
+//     private let elements: Raw_Array[T]$ref;
 
-    public unsafe init(.elements) { }
-    public unsafe init(data: @T)
-    {
-        unsafe(self.init(Raw_Array(data)));
-    }
+//     public unsafe init(.elements) { }
+//     public unsafe init(data: @T)
+//     {
+//         unsafe(self.init(Raw_Array(data)));
+//     }
 
-    public unsafe implicit operator[n: size] #[](params elements: Raw_Array[T]) -> Array[n, T]
-    {
-        return unsafe(Array[n,T](elements));
-    }
-}
+//     public unsafe implicit operator[n: size] #[](params elements: Raw_Array[T]) -> Array[n, T]
+//     {
+//         return unsafe(Array[n,T](elements));
+//     }
+// }
 
-public mut ref struct Array[T]
-{
-    public let count: size;
-    private let elements: Raw_Array[T]$ref;
+// public mut ref struct Array[T]
+// {
+//     public let count: size;
+//     private let elements: Raw_Array[T]$ref;
 
-    public unsafe init(.count, .elements) { }
-    public unsafe init(.count, elements: @T)
-    {
-        .elements = Raw_Array[T]$ref(elements);
-    }
+//     public unsafe init(.count, .elements) { }
+//     public unsafe init(.count, elements: @T)
+//     {
+//         .elements = Raw_Array[T]$ref(elements);
+//     }
 
-    public unsafe implicit operator #[](count: size, elements: @T) -> Array[T]$owned
-    {
-        return unsafe(Array$owned(count, elements));
-    }
-}
+//     public unsafe implicit operator #[](count: size, elements: @T) -> Array[T]$owned
+//     {
+//         return unsafe(Array$owned(count, elements));
+//     }
+// }
