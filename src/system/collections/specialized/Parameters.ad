@@ -1,9 +1,6 @@
 // public move struct Parameters[]
 // {
-//     public get count() -> size
-//     {
-//         return 0;
-//     }
+//     public const count: size = 0;
 
 //     #Inline
 //     public init() { }
