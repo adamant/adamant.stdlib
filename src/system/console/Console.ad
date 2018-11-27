@@ -4,6 +4,6 @@ public class Console
 
     published fn write_line(mut self, line: String)
     {
-        printf("%.*s\n", value.byte_length.value, value.bytes);
+        printf("%.*s\n", line.bytes.count, line.bytes);
     }
 }
