@@ -23,7 +23,7 @@
 //     public init(.first, params .rest) {  }
 
 //     #Inline
-//     public operator #() (first: T, params rest: Parameters[params rest])
+//     public operator #() (first: T, params rest: Parameters[params Rest])
 //         -> Parameters[T, params Rest]
 //     {
 //         return Parameters(first, params rest);
