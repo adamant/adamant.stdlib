@@ -4,6 +4,8 @@ public class Console
 
     published fn write_line(mut self, line: String)
     {
-        printf("%.*s\n", line.bytes.count, line.bytes);
+        print_string(line.bytes_count, line.bytes);
+        let newline: String = "\n";
+        print_string(newline.bytes_count, line.bytes);
     }
 }
