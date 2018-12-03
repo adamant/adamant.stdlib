@@ -1,11 +1,14 @@
-public class Console
+public mut class Console
 {
     public new() { }
 
-    published fn write_line(mut self, line: String)
+    published safe fn write_line(mut self, line: String)
     {
-        print_string(line.bytes_count, line.bytes);
-        let newline: String = "\n";
-        print_string(newline.bytes_count, line.bytes);
+        unsafe
+        {
+            print_string(line.bytes_count, line.bytes);
+            let newline: String = "\n";
+            print_string(newline.bytes_count, line.bytes);
+        }
     }
 }
