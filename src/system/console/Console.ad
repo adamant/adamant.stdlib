@@ -6,9 +6,9 @@ public mut class Console
     {
         unsafe
         {
-            print_string(line.bytes_count, line.bytes);
+            print_string(line.byte_count, line.bytes);
             let newline: String = "\n";
-            print_string(newline.bytes_count, line.bytes);
+            print_string(newline.byte_count, line.bytes);
         }
     }
 }
