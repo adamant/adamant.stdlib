@@ -11,4 +11,13 @@ public mut class Console
             print_string(newline);
         }
     }
+
+    published safe fn write_line(mut self)
+    {
+        unsafe
+        {
+            let newline: String = "\n";
+            print_string(newline);
+        }
+    }
 }
