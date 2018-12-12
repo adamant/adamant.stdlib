@@ -1,6 +1,6 @@
-// public enum struct Inline_Directive
-// {
-//     Never,
-//     Hint,
-//     Always,
-// }
+public enum struct Inline_Directive
+{
+    Never,
+    Hint,
+    Always,
+}

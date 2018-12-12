@@ -1,4 +1,4 @@
-/// Aribitrary sized integer
-// public struct integer
-// {
-// }
+// Aribitrary sized integer
+public struct integer
+{
+}

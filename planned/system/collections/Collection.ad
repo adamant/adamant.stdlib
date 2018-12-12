@@ -1,8 +1,8 @@
-// // TODO move to system.collections package
+// TODO move to system.collections package
 
-// /// A collection is a collection of items
-// public abstract mut class Collection[T]: Container[T]
-//     <: Iterable[T]
-// {
+/// A collection is a collection of items
+public abstract mut class Collection[T]: Container[T]
+    <: Iterable[T]
+{
 
-// }
+}

@@ -1,6 +1,6 @@
-// public struct Inline
-// {
-//     public let directive: Inline_Directive;
+public struct Inline
+{
+    public let directive: Inline_Directive;
 
-//     public new(.directive = .Hint) { }
-// }
+    public new(.directive = .Hint) { }
+}

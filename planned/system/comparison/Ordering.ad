@@ -1,16 +1,16 @@
-// public enum struct Ordering
-// {
-//     Less,
-//     Equal,
-//     Greater;
+public enum struct Ordering
+{
+    Less,
+    Equal,
+    Greater;
 
-//     public fn reverse(self) -> Ordering
-//     {
-//         return match self
-//         {
-//             .Less => .Greater,
-//             .Equal => .Equal,
-//             .Greater => .Less
-//         };
-//     }
-// }
+    public fn reverse(self) -> Ordering
+    {
+        return match self
+        {
+            .Less => .Greater,
+            .Equal => .Equal,
+            .Greater => .Less
+        };
+    }
+}
