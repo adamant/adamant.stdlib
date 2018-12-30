@@ -21,22 +21,3 @@ public mut class Console
         }
     }
 }
-
-published safe fn write_line(line: String)
-{
-    unsafe
-    {
-        print_string(line);
-        let newline: String = "\n";
-        print_string(newline);
-    }
-}
-
-published safe fn write_line()
-{
-    unsafe
-    {
-        let newline: String = "\n";
-        print_string(newline);
-    }
-}
