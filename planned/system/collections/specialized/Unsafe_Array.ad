@@ -1,4 +1,4 @@
-/// An `Unsafe_Array[T]` is an array of `T`'s that start uninitlized.
+/// An `Unsafe_Array[T]` is an array of `T`'s that start uninitialized.
 public mut ref struct Unsafe_Array[T]
 {
     // TODO is this typed correctly? Will it compile?
@@ -17,7 +17,7 @@ public mut ref struct Unsafe_Array[T]
     // of the `Unsafe_Array[T]`
     private unsafe init(.count, .elements) { }
 
-    /// Unsafe because the element may not be initlized
+    /// Unsafe because the element may not be initialized
     public unsafe fn at(mut self, index: size) -> ref var T
         requires index < count
     {
