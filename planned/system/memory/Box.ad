@@ -1,7 +1,6 @@
-// TODO not sure about how mutability is handled here
-
-// A Boxed[T] is a value type `T` allocated on the heap
-public mut struct Boxed[T]
+// A Box[T] is a container for a value type `T` allocated on the heap. Like the
+// Rust Box type, it allows mutation of the boxed value.
+public mut struct Box[T]
     where T: struct
 {
     private let value: @T;
