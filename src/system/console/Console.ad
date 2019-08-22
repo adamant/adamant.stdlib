@@ -2,6 +2,14 @@ public mut class Console
 {
     public new() { }
 
+    published safe fn write(mut self, value: String)
+    {
+        unsafe
+        {
+            print_string(value);
+        }
+    }
+
     published safe fn write_line(mut self, line: String)
     {
         unsafe
@@ -18,6 +26,14 @@ public mut class Console
         {
             let newline: String = "\n";
             print_string(newline);
+        }
+    }
+
+    published safe fn read_line(mut self) -> String
+    {
+        unsafe
+        {
+            return read_string();
         }
     }
 }
