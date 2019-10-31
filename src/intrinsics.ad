@@ -16,5 +16,5 @@
 // published unsafe fn mem_set_byte(ptr: size, value: byte);
 // published unsafe fn mem_get_byte(ptr: size) -> byte;
 
-// published unsafe fn print_utf8_bytes(ptr: size, length: size);
-
+// published unsafe fn print_utf8(ptr: size, length: size);
+// published unsafe fn read_utf8_line(ptr: size, length: size) -> size;

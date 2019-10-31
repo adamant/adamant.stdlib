@@ -6,7 +6,7 @@ published mut class Console
     {
         unsafe
         {
-            print_string(value);
+            print_utf8(value.bytes, value.byte_count);
         }
     }
 
@@ -14,9 +14,9 @@ published mut class Console
     {
         unsafe
         {
-            print_string(line);
+            print_utf8(line.bytes, line.byte_count);
             let newline: String = "\n";
-            print_string(newline);
+            print_utf8(newline.bytes, newline.byte_count);
         }
     }
 
@@ -25,7 +25,7 @@ published mut class Console
         unsafe
         {
             let newline: String = "\n";
-            print_string(newline);
+            print_utf8(newline.bytes, newline.byte_count);
         }
     }
 
@@ -33,7 +33,9 @@ published mut class Console
     {
         unsafe
         {
-            return read_string();
+            let ptr = mem_allocate(1024);
+            let length = read_utf8_line(ptr, 1024);
+            return new String(ptr, length);
         }
     }
 }
