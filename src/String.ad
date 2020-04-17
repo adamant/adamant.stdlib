@@ -44,6 +44,21 @@ published class String
         }
     }
 
+    // published safe fn equals(self, other: String) -> bool
+    // {
+    //     if self.byte_count =/= other.byte_count => return false;
+
+    //     foreach i: size in 0..<other.byte_count
+    //     {
+    //         if mem_get_byte(self.bytes+i) =/= mem_get_byte(other.bytes+i)
+    //         {
+    //             return false;
+    //         }
+    //     }
+
+    //     return true;
+    // }
+
     // Pad this string out to a given length using the supplied string
     // Currently only works correctly if the string is comprised only of ASCII
     // characters and `with` is only a single character
