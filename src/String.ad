@@ -32,7 +32,7 @@ published class String
     // }
 
     /// Concatenate two strings producing a new one
-    published safe fn concat(self, other: String) -> String$owned
+    published safe fn concat(self, other: String) -> owned String
     {
         let new_byte_count = self.byte_count + other.byte_count;
         let new_bytes = mem_allocate(new_byte_count);
