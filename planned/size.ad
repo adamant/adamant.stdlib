@@ -10,7 +10,7 @@ public extend struct size
         // only set bit become set; and the set bit become unset.
         // For example:
         // 4 == 0b100, 3 == 0b011
-        // Thus if we and them together, we get zero. The edge case is the number 0.
+        // Thus if we do a bitwise-and on them, we get zero. The edge case is the number 0.
         return value =/= 0 and value.bit_and(value.wrapping_subtract(1)) == 0;
     }
 }

@@ -29,7 +29,7 @@ published mut class Console
         }
     }
 
-    published safe fn read_line(mut self) -> String
+    published safe fn read_line(mut self) -> iso String
     {
         unsafe
         {
