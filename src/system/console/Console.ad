@@ -2,7 +2,7 @@ published mut class Console
 {
     public new() { }
 
-    published safe fn write(mut self, value: String)
+    published /* safe */ fn write(mut self, value: String)
     {
         unsafe
         {
@@ -10,7 +10,7 @@ published mut class Console
         }
     }
 
-    published safe fn write_line(mut self, line: String)
+    published /* safe */ fn write_line(mut self, line: String)
     {
         unsafe
         {
@@ -20,7 +20,7 @@ published mut class Console
         }
     }
 
-    published safe fn write_line(mut self)
+    published /* safe */ fn write_line(mut self)
     {
         unsafe
         {
@@ -29,7 +29,7 @@ published mut class Console
         }
     }
 
-    published safe fn read_line(mut self) -> iso String
+    published /* safe */ fn read_line(mut self) -> iso String
     {
         unsafe
         {
